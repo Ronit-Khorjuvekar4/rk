@@ -18,6 +18,8 @@ data = {
 
 df = pd.DataFrame(data)
 
+#oko
+
 <<<<<<< HEAD
 # df.dropna(inplace=True)
 =======
