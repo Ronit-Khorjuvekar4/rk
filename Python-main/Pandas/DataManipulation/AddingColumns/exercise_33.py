@@ -1,4 +1,5 @@
-#
+# Insert a new column PerformanceScore that assigns a score of 
+# 90 for employees in the 'IT' and 'Finance' departments, and 80 for all others.
 #
 import pandas as pd
 import numpy as np
@@ -16,7 +17,14 @@ data = {
 
 df = pd.DataFrame(data)
 
+conditions = [
+    ((df['Department'] == 'IT') | (df['Department'] == 'Finance')),
+    (~(df['Department'] == 'IT') | ~(df['Department'] == 'Finance'))
+]
 
+choice = [90,80]
+
+df['PerformanceScore'] = np.select(conditions,choice)
 
 print(df)
 

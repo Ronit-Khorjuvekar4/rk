@@ -1,4 +1,6 @@
-#
+# Add a new column AnnualGrowthRate that calculates the annual growth rate of the salary based on the formula: 
+# (Current Salary - Salary at Joining) / (Years of Experience). 
+# Assume a constant growth of ₹5000 each year for each employee as the salary at joining.
 #
 import pandas as pd
 import numpy as np

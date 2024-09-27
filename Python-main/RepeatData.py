@@ -1,11 +1,11 @@
 import os
 
-filePath = "Pandas/DataFrame/HandlingMissingData/loc"
+filePath = "Pandas/DataManipulation/AddingColumns"
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 len = len(os.listdir(filePath))
 
-for x in range(1,len):
+for x in range(0,len):
     dataset = open(f'{ROOT_DIR}/DataSet.py', "r")
     fpath = os.listdir(filePath)[x] 
     if(fpath.find('exe') == 0 ):

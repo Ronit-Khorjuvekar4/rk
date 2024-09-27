@@ -1,4 +1,5 @@
-#
+# Add a new column called SeniorityLevel that classifies employees into 
+# 'Junior', 'Mid', or 'Senior' based on their ExperienceYears (e.g., <5 years = 'Junior', 5-10 years = 'Mid', >10 years = 'Senior').
 #
 import pandas as pd
 import numpy as np
@@ -15,6 +16,21 @@ data = {
 }
 
 df = pd.DataFrame(data)
+
+import numpy as np
+
+# Define conditions and corresponding choices for SeniorityLevel
+conditions = [
+    df['ExperienceYears'] < 5,
+    (df['ExperienceYears'] >= 5) & (df['ExperienceYears'] <= 10),
+    df['ExperienceYears'] > 10
+]
+
+choices = ['Junior', 'Mid', 'Senior']
+
+# Use np.select to assign the values based on the conditions
+df['SeniorityLevel'] = np.select(conditions, choices, default='Unknown')
+
 
 
 

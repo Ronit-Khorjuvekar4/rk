@@ -7,9 +7,9 @@
 
 import os
 
-filePath = "Pandas/DataFrame/HandlingMissingData/loc"
-n = 31 # Initial files number
-addFolderLen = 31
+filePath = "Pandas/DataManipulation/AddingColumns"
+n = 16 # Initial files number
+addFolderLen = 11
 
 def addFolders(n):
     for x in range(1,n):
@@ -25,7 +25,7 @@ if(os.path.isdir(filePath)):
         addFolders(folderLen)
 
 else:
-    os.mkdir(filePath)
+    os.makedirs(filePath)
     addFolders(n)
 
 

@@ -1,4 +1,5 @@
-#
+# Create a new column that calculates the salary increment for 
+# each employee by multiplying their Salary by 0.1 only for employees who joined before 2015.
 #
 import pandas as pd
 import numpy as np
@@ -15,6 +16,8 @@ data = {
 }
 
 df = pd.DataFrame(data)
+
+df.loc[:,'SalIncrement'] = np.where(df['JoiningYear'] < 2015, df['Salary'] * 0.1, 0)
 
 
 

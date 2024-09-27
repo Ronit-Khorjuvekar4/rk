@@ -1,4 +1,5 @@
-#
+# Insert a new column Region that maps departments to specific regions 
+# (e.g., 'HR' and 'Sales' = 'North', 'IT' = 'East', 'Finance' = 'West', 'Marketing' = 'South').
 #
 import pandas as pd
 import numpy as np
@@ -16,7 +17,15 @@ data = {
 
 df = pd.DataFrame(data)
 
+mapRegion = {
+                'HR' : 'North',
+                'Sales' : 'North',
+                'IT' : 'East', 
+                'Finance' : 'West', 
+                'Marketing' : 'South'
+            }
 
+df['Region'] = df['Department'].map(mapRegion)
 
 print(df)
 

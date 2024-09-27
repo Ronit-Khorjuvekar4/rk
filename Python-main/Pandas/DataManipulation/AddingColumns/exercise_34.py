@@ -1,4 +1,6 @@
-#
+# Add a new column AdjustedSalary that applies a 
+# 15% increase to Salary for employees 
+# older than 35 years and a 5% increase for those younger or equal to 35.
 #
 import pandas as pd
 import numpy as np
@@ -15,6 +17,10 @@ data = {
 }
 
 df = pd.DataFrame(data)
+
+import numpy as np
+
+df['AdjustedSalary'] = np.where(df['Age'] > 35, df['Salary'] * 1.15, df['Salary'] * 1.05)
 
 
 

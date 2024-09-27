@@ -1,4 +1,5 @@
-#
+# Create a new column Bonus that is calculated as 
+# 20% of Salary for employees with ExperienceYears greater than 8 years, and 10% otherwise.
 #
 import pandas as pd
 import numpy as np
@@ -15,6 +16,8 @@ data = {
 }
 
 df = pd.DataFrame(data)
+
+df['Bonus'] = np.where(df['ExperienceYears'] > 8, df['Salary'] * 0.2,df['Salary'] * 0.1)
 
 
 

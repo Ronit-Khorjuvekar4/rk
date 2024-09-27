@@ -1,4 +1,5 @@
-#
+# Create a new column PromotionEligibility that flags employees as 
+# 'Eligible' if they have more than 7 years of experience or 'Not Eligible' otherwise, based on the ExperienceYears column.
 #
 import pandas as pd
 import numpy as np
@@ -16,7 +17,7 @@ data = {
 
 df = pd.DataFrame(data)
 
-
+df['PromotionEligibility'] = np.where(df['ExperienceYears'] > 7, 'Eligible','Not Eligible')
 
 print(df)
 
